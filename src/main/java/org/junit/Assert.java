@@ -2,7 +2,6 @@ package org.junit;
 
 import org.hamcrest.Matcher;
 import org.hamcrest.MatcherAssert;
-import org.junit.function.ThrowingRunnable;
 import org.junit.internal.ArrayComparisonFailure;
 import org.junit.internal.ExactComparisonCriteria;
 import org.junit.internal.InexactComparisonCriteria;
@@ -1030,5 +1029,12 @@ public class Assert {
 
     private static String buildPrefix(String message) {
         return message != null && message.length() != 0 ? message + ": " : "";
+    }
+    
+    public static <T> boolean assertGreaterThan(T o1, T o2, java.util.Comparator<T> comparator) {
+        int a = comparator.compare(o1, o2);
+        
+        if(a > 0) return true;
+        else return false;
     }
 }

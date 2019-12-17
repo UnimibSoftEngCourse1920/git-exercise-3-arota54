@@ -1002,4 +1002,9 @@ public class AssertionTest {
             }
         };
     }
+    
+    @Test
+    public void assertGreaterThanTest() {
+        System.out.println("Questo funziona 1");
+    }
 }
